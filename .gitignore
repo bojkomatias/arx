@@ -3,7 +3,7 @@
 # db 
 drizzle
 sqlite.db
-/src/output.css
+
 
 # dependencies
 /node_modules

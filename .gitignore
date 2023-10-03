@@ -3,7 +3,7 @@
 # db 
 drizzle
 sqlite.db
-
+/src/output.css
 
 # dependencies
 /node_modules
@@ -45,3 +45,4 @@ yarn-error.log*
 **/*.log
 package-lock.json
 **/*.bun
+bun.lockb

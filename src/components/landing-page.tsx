@@ -2,8 +2,8 @@ import { SVG } from "./svg";
 import { Button } from "./ui/button";
 
 export const LandingPage = () => (
-  <>
-    <section class="pb-8 pl-10 pt-6 md:pb-12 md:pt-10">
+  <div>
+    <section class="mx-auto max-w-7xl px-10 pb-8 pt-6 md:pb-12 md:pt-10 lg:px-16">
       <div class="max-w-lg space-y-6 lg:max-w-2xl">
         <h1 class="text-2xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
           The new standard in cyber security & supply chain resilience
@@ -67,5 +67,5 @@ export const LandingPage = () => (
         </div>
       </div>
     </section>
-  </>
+  </div>
 );

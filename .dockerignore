@@ -46,7 +46,7 @@ build
 **/**/*.log
 **/package-lock.json
 **/**/*.bun
-**/bun.lockb
+
 
 # flyctl launch added from node_modules/tailwindcss/stubs/.gitignore
 !node_modules/tailwindcss/stubs/**/*

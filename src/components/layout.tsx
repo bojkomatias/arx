@@ -1,117 +1,61 @@
+import Footer from "./footer";
+import Header from "./header";
+import { SVG } from "./svg";
+import { Button } from "./ui/button";
 import DarkMode from "./ui/dark-mode-toggle";
-import { LoginButton } from "@/handlers/auth/components/login-button";
 
-export function Layout({
-  isAuth = true,
-  children,
-}: {
-  isAuth?: boolean;
-  children?: any;
-}) {
+export function Layout({ children }: { children?: any }) {
   return (
-    <>
-      {`<!DOCTYPE html>`}
-      <html lang="en">
-        <head>
-          <meta charset="UTF-8" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          {/* HTMX */}
-          <script
-            src="https://unpkg.com/htmx.org@1.9.5"
-            integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
-            crossorigin="anonymous"
-          />
-          {/* Preload Ext */}
-          <script src="https://unpkg.com/htmx.org/dist/ext/preload.js"></script>
-          {/* Target Response Ext */}
-          <script src="https://unpkg.com/htmx.org/dist/ext/response-targets.js"></script>
-          {/* htmx configuration */}
-          <script>htmx.config.globalViewTransitions = true;</script>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* HTMX */}
+        <script
+          src="https://unpkg.com/htmx.org@1.9.5"
+          integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
+          crossorigin="anonymous"
+        />
+        {/* Preload Ext */}
+        <script src="https://unpkg.com/htmx.org/dist/ext/preload.js"></script>
+        {/* Target Response Ext */}
+        <script src="https://unpkg.com/htmx.org/dist/ext/response-targets.js"></script>
+        {/* htmx configuration */}
+        <script>htmx.config.globalViewTransitions = true;</script>
 
-          {/* Hyperscript */}
-          <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
-          {/* TailwindCSS */}
-          <link href="/styles.css" rel="preload stylesheet" as="style" />
-          {/* Fonts */}
-          <link
-            href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap"
-            rel="preload stylesheet"
-          />
+        {/* Hyperscript */}
+        <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
+        {/* TailwindCSS */}
+        <link href="/styles.css" rel="preload stylesheet" />
+        {/* Fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin="true"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+          rel="stylesheet"
+        />
 
-          <title>Activity</title>
-        </head>
-        <body
-          class="bg-white text-black/80 subpixel-antialiased dark:bg-gray-950 dark:text-white/80"
-          hx-boost="true"
-          hx-ext="response-targets, preload"
-          _={`on every htmx:beforeSend in <button /> tell it toggle @disabled until htmx:afterOnLoad end
-        on click add .hidden .opacity-0 .scale-95 to .dropdown end`}
-          // Handles click outside for all menus
-        >
-          {/* Notifications fall all here! */}
-          <div id="notification" />
-          <div class="min-h-screen">
-            <header class="border-b py-3 dark:border-gray-700">
-              <div class="mx-auto flex max-w-7xl items-center justify-between px-8">
-                <a
-                  href="/"
-                  class="group flex items-end gap-3 text-xl font-black hover:text-black dark:hover:text-white"
-                  tabindex="-1"
-                >
-                  <i class="i-lucide-activity h-8 w-8 text-gray-500 group-hover:scale-105 group-hover:text-cyan-600" />
-                  <span>Activity</span>
-                </a>
-
-                {isAuth ? (
-                  <i
-                    hx-get="/auth/navigation"
-                    hx-trigger="load"
-                    hx-swap="outerHTML"
-                    class="i-lucide-fingerprint h-8 w-8 overflow-hidden rounded-full text-gray-500"
-                  />
-                ) : (
-                  <LoginButton />
-                )}
-              </div>
-            </header>
-            <main class="mx-auto max-w-7xl px-0 lg:px-6">{children}</main>
-          </div>
-          <footer class="border-t dark:border-gray-700">
-            <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 p-8 sm:flex-row">
-              <i class="i-lucide-activity h-8 w-8" />
-              <p class="flex-auto text-center text-sm leading-loose text-gray-600 dark:text-gray-400 sm:text-left">
-                Built by{" "}
-                <a
-                  href="https://x.com/bojko_matias"
-                  class="text-black underline underline-offset-2 dark:text-white"
-                >
-                  bojkomatias
-                </a>
-                . Source code available on{" "}
-                <a
-                  href="https://github.com/bojkomatias/activity"
-                  class="text-black underline underline-offset-2 dark:text-white"
-                >
-                  Github
-                </a>
-              </p>
-              <DarkMode />
-            </div>
-          </footer>
-        </body>
-      </html>
-    </>
+        <title>ARX</title>
+      </head>
+      <body
+        class="bg-background text-foreground w-screen overflow-x-hidden subpixel-antialiased"
+        hx-boost="true"
+        // hx-ext="response-targets, preload"
+        _={`on click add .hidden .opacity-0 .scale-95 to .dropdown end`}
+        // Handles click outside for all menus
+      >
+        <SVG class="left-24 top-32 rotate-[30deg]" />
+        <SVG class="bottom-12 left-20 -rotate-[188deg]" />
+        <div class="dark:to-accent-1/20 to-primary/10 dark:via-accent-2/20 bg-gradient-to-br from-transparent via-80%">
+          <Header />
+          <main class="min-h-screen">{children}</main>
+        </div>
+        <Footer />
+      </body>
+    </html>
   );
 }
-/**
- * A function to help with page refreshes!
- * So when a user triggers a refresh adds the layout. (avoid using redirects on handlers)
- * @hx Indicating a normal hx request, if not defaults to layout
- * @Component the JSX passed
- */
-export const withLayout = (hx: boolean, Component: JSX.Element) => {
-  return hx ? Component : <Layout>{Component}</Layout>;
-};

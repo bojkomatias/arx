@@ -1,111 +1,71 @@
+import { SVG } from "./svg";
+import { Button } from "./ui/button";
+
 export const LandingPage = () => (
-  <div class="px-4">
-    <section class="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
-      <div class="mx-auto flex max-w-[64rem] flex-col items-center gap-4 text-center">
-        <h1 class="text-3xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
-          An example hypermedia driven app built using Elysia.
+  <>
+    <section class="pb-8 pl-10 pt-6 md:pb-12 md:pt-10">
+      <div class="max-w-lg space-y-6 lg:max-w-2xl">
+        <h1 class="text-2xl font-bold sm:text-4xl md:text-5xl lg:text-6xl">
+          The new standard in cyber security & supply chain resilience
         </h1>
-        <p class="max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          I'm building a web app with Bun, Elyisia, Turso, Drizzle, HTMX,
-          Hyperscript and Tailwind. Follow along as we figure this out together.
+        <p class="text-muted-foreground leading-normal sm:text-xl sm:leading-8">
+          Get peace of mind today. Improve your organisation's cyber security,
+          and supply chain management through the ARX Alliance.
         </p>
-        <div class="space-x-4">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            class="inline-flex h-11 items-center justify-center rounded-md border px-8 text-sm font-medium dark:border-gray-800"
-            href="https://github.com/bojkomatias/activity"
-          >
-            GitHub
-          </a>
+        <div class="flex gap-3">
+          <Button intent="primary" size="lg">
+            Get stared{" "}
+            <span class="-mr-4 ml-2 h-[1.1px] w-0 rounded-md bg-white transition-all group-hover:w-2.5" />
+            <i class="i-lucide-chevron-right -ml-px" />
+          </Button>
+          <Button intent="outline" size="lg">
+            Get in touch
+          </Button>
         </div>
       </div>
     </section>
-    <section class="space-y-6 pb-48 pt-8 md:pt-12 lg:pt-24">
-      <div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-        <h2 class="text-3xl font-bold leading-loose sm:text-3xl md:text-6xl">
-          Features
-        </h2>
-        <p class="max-w-[85%] leading-normal sm:text-lg sm:leading-7">
-          The project is meant to serve as an example on how to keep on building
-          your hypermedia driven wep application with bleeding edge frameworks
-          and tooling.
-        </p>
-      </div>
-      <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
-        <div class="relative overflow-hidden rounded-lg border p-2 dark:border-gray-800">
-          <div class="rounded-md p-6">
-            <div class="space-y-2">
-              <h3 class="font-bold">Bun + Elysia</h3>
-              <p class="text-sm">
-                Supercharged by Bun runtime, Elysia offers a developer focused
-                experience.
-              </p>
+    <section>
+      <div class="relative isolate overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 py-48 lg:flex lg:px-8">
+          <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl lg:flex-shrink-0 lg:pt-8">
+            <div class="mt-24 sm:mt-32 lg:mt-16">
+              <a href="#" class="inline-flex space-x-6">
+                <span class="bg-primary/10 text-primary ring-primary/20 rounded-full px-3 py-1 text-sm font-semibold leading-6 ring-1 ring-inset">
+                  What's new
+                </span>
+                <span class="text-muted-foreground inline-flex items-center space-x-2 text-sm font-medium leading-6">
+                  <span>Just shipped v1.0</span>
+                  {/* <ChevronRightIcon
+                    class="h-5 w-5 text-gray-400"
+                    aria-hidden="true"
+                  /> */}
+                </span>
+              </a>
+            </div>
+            <h1 class="text-foreground mt-10 text-4xl font-bold tracking-tight sm:text-6xl">
+              Lorem Ipsum Dolor sir amet
+            </h1>
+            <p class="text-muted-foreground mt-6 text-lg leading-8">
+              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
+              lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
+              fugiat aliqua.
+            </p>
+          </div>
+          <div class="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
+            <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
+              <div class="ring-border bg-card -m-2 overflow-hidden rounded-xl p-2 ring-1 ring-inset lg:-m-4 lg:rounded-2xl lg:p-4">
+                <img
+                  src="/public/dashboard.png"
+                  alt="App screenshot"
+                  width="1000"
+                  height="700"
+                  class="ring-border -m-8 w-[60rem] rounded-md shadow-2xl ring-1"
+                />
+              </div>
             </div>
           </div>
         </div>
-        <div class="relative overflow-hidden rounded-lg border p-2 dark:border-gray-800">
-          <div class="rounded-md p-6">
-            <div class="space-y-2">
-              <h3 class="font-bold">HATEOAS</h3>
-              <p class="text-sm">
-                HTMX and hypermedia driven patterns and strategies.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-background relative overflow-hidden rounded-lg border p-2 dark:border-gray-800">
-          <div class=" rounded-md p-6">
-            <div class="space-y-2">
-              <h3 class="font-bold">Database</h3>
-              <p class="text-sm">
-                Using Turso, a blazing fast edge ready SQLite database.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-background relative overflow-hidden rounded-lg border p-2 dark:border-gray-800">
-          <div class=" rounded-md p-6">
-            <div class="space-y-2">
-              <h3 class="font-bold">Tailwind CSS</h3>
-              <p class="text-sm">
-                UI components built using Tailwind CSS. Animated with
-                Hyperscript.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-background relative overflow-hidden rounded-lg border p-2 dark:border-gray-800">
-          <div class=" rounded-md p-6">
-            <div class="space-y-2">
-              <h3 class="font-bold">Authentication</h3>
-              <p class="text-sm">
-                Roll your own authentication style. Even OAuth2 handler ready.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="bg-background relative overflow-hidden rounded-lg border p-2 dark:border-gray-800">
-          <div class=" rounded-md p-6">
-            <div class="space-y-2">
-              <h3 class="font-bold">ORM</h3>
-              <p class="text-sm">
-                Drizzle ORM for type safety and drizzle toolkit goodies.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mx-auto text-center md:max-w-[58rem]">
-        <p class="leading-normal text-gray-500 sm:text-base sm:leading-7">
-          The project styling is heavy influenced by{" "}
-          <a href="https://ui.shadcn.com/" class="underline underline-offset-2">
-            shadcn/ui
-          </a>
-          <br /> Consider this is just a base template, go ahead and customize
-          components, colors and fonts.
-        </p>
       </div>
     </section>
-  </div>
+  </>
 );

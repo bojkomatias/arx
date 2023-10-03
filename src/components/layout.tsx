@@ -11,17 +11,17 @@ export function Layout({ children }: { children?: any }) {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* HTMX */}
-        <script
+        {/* <script
           src="https://unpkg.com/htmx.org@1.9.5"
           integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO"
           crossorigin="anonymous"
-        />
+        /> */}
         {/* Preload Ext */}
-        <script src="https://unpkg.com/htmx.org/dist/ext/preload.js"></script>
+        {/* <script src="https://unpkg.com/htmx.org/dist/ext/preload.js"></script> */}
         {/* Target Response Ext */}
-        <script src="https://unpkg.com/htmx.org/dist/ext/response-targets.js"></script>
+        {/* <script src="https://unpkg.com/htmx.org/dist/ext/response-targets.js"></script> */}
         {/* htmx configuration */}
-        <script>htmx.config.globalViewTransitions = true;</script>
+        {/* <script>htmx.config.globalViewTransitions = true;</script> */}
 
         {/* Hyperscript */}
         <script src="https://unpkg.com/hyperscript.org@0.9.11"></script>
@@ -38,8 +38,8 @@ export function Layout({ children }: { children?: any }) {
           href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
           rel="stylesheet"
         />
-
-        <title>ARX</title>
+        <link rel="icon" href="/public/logo-icon.svg" />
+        <title>Cybersecurity ARX</title>
       </head>
       <body
         class="bg-background text-foreground w-screen overflow-x-hidden subpixel-antialiased"
